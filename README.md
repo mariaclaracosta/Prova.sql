@@ -74,7 +74,7 @@ Nome VARCHAR(30),
 CREATE TABLE Partidas (
 Id_partida INT PRIMARY KEY IDENTITY,
 Dupla VARCHAR(30),
-Classificacao	VARCHAR(20),
+Classificacao VARCHAR(20),
 Fase1 VARCHAR(60),
 Fase2 VARCHAR(60),
 Fase3 VARCHAR(60),
@@ -84,27 +84,27 @@ Fase4 VARCHAR(60),
 
 ```sql
 CREATE TABLE Juiz (
-Id_juiz INT	PRIMARY KEY IDENTITY,
-Nome	VARCHAR(60),
+Id_juiz INT PRIMARY KEY IDENTITY,
+Nome VARCHAR(60),
 );
 ```
 <h3>"Tabelas-ponte"</h3>
 
 ```sql
 CREATE TABLE Telefone(
-Id_telefone		INT		PRIMARY KEY		IDENTITY,
-Telefone		VARCHAR(15),
-Id_juiz			INT,
-FOREIGN KEY	(Id_juiz) REFERENCES Juiz(Id_juiz)
+Id_telefone INT PRIMARY KEY IDENTITY,
+Telefone VARCHAR(15),
+Id_juiz	INT,
+FOREIGN KEY (Id_juiz) REFERENCES Juiz(Id_juiz)
 );
 ```
 ```sql
 CREATE TABLE Participantes(
-Id_participantes	INT		PRIMARY KEY		IDENTITY,
-Id_participante			INT,
-Id_dupla				INT,
-FOREIGN KEY	(Id_dupla) REFERENCES Duplas(Id_dupla),
-FOREIGN KEY	(Id_participante) REFERENCES Participante(Id_participantes)
+Id_participantes INT PRIMARY KEY IDENTITY,
+Id_participante	INT,
+Id_dupla INT,
+FOREIGN KEY (Id_dupla) REFERENCES Duplas(Id_dupla),
+FOREIGN KEY (Id_participante) REFERENCES Participante(Id_participantes)
 );
 ```
 
